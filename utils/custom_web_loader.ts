@@ -49,7 +49,7 @@ export class CustomWebLoader
   }> {
     try {
       const { load } = await import('cheerio');
-      return { load };
+      return { "load":load };
     } catch (e) {
       console.error(e);
       throw new Error(

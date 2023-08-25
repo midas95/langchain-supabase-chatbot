@@ -9,6 +9,7 @@ create table documents (
   embedding vector(1536) -- 1536 works for OpenAI embeddings, change if needed
 );
 
+set statement_timeout = '300s';
 -- Create a function to search for documents
 create function match_documents (
   query_embedding vector(1536),

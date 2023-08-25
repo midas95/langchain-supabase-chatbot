@@ -124,7 +124,7 @@ export default function Home() {
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Thomas Frank Notion Guide ChatBot
+            My ChatBot trained about Notion using Langchain
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
@@ -222,7 +222,7 @@ export default function Home() {
         </div>
         <footer className="m-auto">
           <a href="https://twitter.com/mayowaoshin">
-            Powered by LangChain. Demo built by Mayo (Twitter: @mayowaoshin).
+            Powered by LangChain. Demo built by Dylan Castillo (Telegram: https://t.me/Strongcrood).
           </a>
         </footer>
       </Layout>

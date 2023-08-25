@@ -38,8 +38,15 @@ async function embedDocuments(
   docs: Document[],
   embeddings: Embeddings,
 ) {
-  console.log('creating embeddings...');
-  await SupabaseVectorStore.fromDocuments(client, docs, embeddings);
+  // await SupabaseVectorStore.fromDocuments(client, docs, embeddings);
+  SupabaseVectorStore.fromTexts(
+    ['API is toolchain with integration.', 'Samples requests and responses are shown for each endpoint.', "What's this?"],
+    [{ id: 2 }, { id: 1 }, { id: 3 }],
+    new OpenAIEmbeddings(),
+    {
+      client,
+    }
+  )
   console.log('embeddings successfully stored in supabase');
 }
 
@@ -57,6 +64,7 @@ async function splitDocsIntoChunks(docs: Document[]): Promise<Document[]> {
     const rawDocs = await extractDataFromUrls(urls);
     //split docs into chunks for openai context window
     const docs = await splitDocsIntoChunks(rawDocs);
+    console.log("start embed")
     //embed docs into supabase
     await embedDocuments(supabaseClient, docs, new OpenAIEmbeddings());
   } catch (error) {
