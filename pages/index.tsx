@@ -17,7 +17,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hi there its Tom! What would like to learn about notion?',
+        message: 'Hi there its Chatbot! What would like to learn about notion?',
         type: 'apiMessage',
       },
     ],
@@ -135,7 +135,7 @@ export default function Home() {
                   if (message.type === 'apiMessage') {
                     icon = (
                       <Image
-                        src="/Thomas-Frank-Avatar.jpg"
+                        src="/usericon.png"
                         alt="AI"
                         width="40"
                         height="40"

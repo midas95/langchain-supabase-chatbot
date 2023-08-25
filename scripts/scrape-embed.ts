@@ -38,15 +38,15 @@ async function embedDocuments(
   docs: Document[],
   embeddings: Embeddings,
 ) {
-  // await SupabaseVectorStore.fromDocuments(client, docs, embeddings);
-  SupabaseVectorStore.fromTexts(
-    ['API is toolchain with integration.', 'Samples requests and responses are shown for each endpoint.', "What's this?"],
-    [{ id: 2 }, { id: 1 }, { id: 3 }],
-    new OpenAIEmbeddings(),
-    {
-      client,
-    }
-  )
+  await SupabaseVectorStore.fromDocuments(client, docs, embeddings);
+  // SupabaseVectorStore.fromTexts(
+  //   ['API is toolchain with integration.', 'Samples requests and responses are shown for each endpoint.', "What's this?"],
+  //   [{ id: 2 }, { id: 1 }, { id: 3 }],
+  //   new OpenAIEmbeddings(),
+  //   {
+  //     client,
+  //   }
+  // )
   console.log('embeddings successfully stored in supabase');
 }
 
